@@ -49,6 +49,8 @@ extern "C"
 // ******************************************************
 #define vec vec3
 #define real float
+#define VECLIST	std::vector<vertex>
+inline float _MIN(float a, float b) { return ((a) < (b) ? (a) : (b)); }
 struct vec3 { float x = 0; float y = 0; float z = 0; };
 struct vec2 { float x = 0; float y = 0;};
 struct vertex
@@ -67,8 +69,7 @@ struct vertex
     vec3 bone;
 
 };
-#define VECLIST	std::vector<vertex>
-inline float _MIN(float a, float b) { return ((a) < (b) ? (a) : (b)); }
+
 static void triang(vertex& p1, vertex& p2, vertex& p3)
 {
     glVertex3f(p1.p.x, p1.p.y , p1.p.z);
@@ -224,7 +225,7 @@ static void Draw(void)
 // *****************************************************
 int main(int argc, char** argv)
 {
-    VB_dopmhg("C:\\Users\\18858\\Documents\\LAB\\ZEXE\\main.e");
+    //VB_dopmhg("C:\\Users\\18858\\Documents\\LAB\\ZEXE\\main.e");
 
     GLenum type;
 
